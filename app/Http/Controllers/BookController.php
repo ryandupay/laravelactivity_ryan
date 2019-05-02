@@ -54,6 +54,13 @@ class BookController extends Controller
         $book->title = $request->input('title');
         $book->description = $request->input('description');
         $book->update();
+        return view('book/show', compact('book'));
+    }
+
+    public function delete($id)
+    {
+        $book = Book::find($id);
+        $book->delete();
         return redirect('books');
     }
 

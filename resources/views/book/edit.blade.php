@@ -3,6 +3,7 @@
 @section('content')
     <div class="col-sm-12">
         <h4 class="text-left">Editting book#{{ $book->id }}</h4>
+        <a href="{{ route('book.show', ['id'=>$book->id] ) }}">Back</a>
         <form action="{{ route('book.bookupdate', ['id'=>$book->id] ) }}" method="POST">
             @csrf
             <div class="form-group">

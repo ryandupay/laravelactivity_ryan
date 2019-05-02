@@ -12,6 +12,7 @@
                 <th>ID</th>
                 <th>Title</th>
                 <th>Description</th>
+                <th>Delete</th>
             </thead>
             <tbody>
                 @foreach ($books as $book)
@@ -19,6 +20,7 @@
                         <td><a href="{{ route('book.show', ['id'=>$book->id] ) }}">{{ $book->id }}</a></td>
                         <td>{{ $book->title }}</td>
                         <td>{{ $book->description }}</td>
+                        <td><a type="button" class="btn btn-dark" href="{{ route('book.delete', ['id'=>$book->id] ) }}">Delete</a></td>
                     </tr>
                 @endforeach
 

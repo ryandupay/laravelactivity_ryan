@@ -40,10 +40,11 @@ Route::get('/profile', function () {
     return view('profile', compact('data')); 
 });
 
-Route::get('/books', 'BookController@index');
+Route::get('/books', 'BookController@index')->name('books');;
 Route::get('/book/create', 'BookController@create')->name('book.create');
 Route::post('/book/store', 'BookController@store')->name('book.store');
 Route::get('/book/{id}', 'BookController@show')->name('book.show');
 Route::get('/book/{id}/edit', 'BookController@edit')->name('book.edit');
 Route::post('/book/{id}/bookupdate', 'BookController@bookupdate')->name('book.bookupdate');
+Route::get('/book/{id}/delete', 'BookController@delete')->name('book.delete');
 

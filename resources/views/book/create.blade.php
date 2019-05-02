@@ -3,7 +3,7 @@
 @section('content')
     <div class="col-sm-12">
         <h4 class="text-left">Create a book</h4>
-        
+        <a href="{{ route('books') }}">Back</a>
         <form action="{{ route('book.store') }}" method="POST">
             @csrf
             <div class="form-group">
