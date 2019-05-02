@@ -3,7 +3,7 @@
 @section('content')
     <div class="col-sm-12">
         <h4 class="text-left">Create a book</h4>
-        <a href="{{ route('books') }}">Back</a>
+
         <form action="{{ route('book.store') }}" method="POST">
             @csrf
             <div class="form-group">
@@ -15,7 +15,9 @@
                 <input type="text" class="form-control" name="description" placeholder="Input the book description here." required>
             </div>
             <input type="submit" class="btn btn-primary" name="submit" value="create">
-        </form
+        </form>
+
+        <a role="button" class="btn btn-dark" href="{{ route('books') }}">Back</a>
     </div>
 @endsection
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Vote;
 
 use Illuminate\Http\Request;
 
@@ -64,5 +65,22 @@ class BookController extends Controller
         return redirect('books');
     }
 
+    public function upvote($id)
+    {
+       $book = Book::find($id);
+       $vote = new Vote();
+       $book->votes()->save($vote);
+
+       return redirect()->route('books');
+    }
+
+    public function downvote($id)
+    {
+        $book = Book::find($id);
+        $vote = $book->votes()->latest()->first();
+        $vote->delete();
+
+       return redirect()->route('books');
+    }
 
 }

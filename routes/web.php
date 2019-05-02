@@ -47,4 +47,6 @@ Route::get('/book/{id}', 'BookController@show')->name('book.show');
 Route::get('/book/{id}/edit', 'BookController@edit')->name('book.edit');
 Route::post('/book/{id}/bookupdate', 'BookController@bookupdate')->name('book.bookupdate');
 Route::get('/book/{id}/delete', 'BookController@delete')->name('book.delete');
+Route::get('/book/{id}/upvote', 'BookController@upvote')->name('book.upvote');
+Route::get('/book/{id}/downvote', 'BookController@downvote')->name('book.downvote');
 
